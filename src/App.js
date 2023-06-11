@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Tab from './Components/Tab'
 function App() {
+  const Arr=[[{title:"Tab1",content:"Content from Tab1"},{title:"Tab2",content:"Content from Tab2"},{title:"Tab3",content:"Content from Tab3"}]
+  ,[{title:"TabA",content:"Content from TabA"},{title:"TabB",content:"Content from TabB"},{title:"TabC",content:"Content from TabC"}]]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+     {
+      Arr.map((arr,index)=>{
+        return(
+          <Tab arr={arr} key={index}/>
+        )
+      })
+     }
+   </div>
   );
 }
 
